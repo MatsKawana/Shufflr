@@ -27,6 +27,7 @@ express()
 .use(cors(
   {origin: "https://shufflr-five.vercel.app"}
 ))
+.use(helmet())
 
 .get("/users/:user", getUserInfo)
 .get("/collections/:user", getUserCollections) 
