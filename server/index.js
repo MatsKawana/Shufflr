@@ -6,6 +6,9 @@ const cors = require("cors");
 const helmet = require("helmet");
 require("dotenv").config();
 const port = process.env.PORT || 4000;
+const corsOptions = {
+  origin: "https://shufflr-five.vercel.app",
+};
 
 // Handlers
 const {
@@ -25,9 +28,7 @@ express()
 .use(morgan("tiny"))
 .use(express.json())
 .use(express.static("public"))
-.use(cors(
-  {origin: "https://shufflr-five.vercel.app"}
-))
+.use(cors(corsOptions))
 .use(helmet())
 
 .get("/users/:user", getUserInfo)
