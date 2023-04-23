@@ -24,7 +24,9 @@ express()
 .use(morgan("tiny"))
 .use(express.json())
 .use(express.static("public"))
-.use(cors())
+.use(cors(
+  {origin: "https://shufflr-five.vercel.app"}
+))
 
 .get("/users/:user", getUserInfo)
 .get("/collections/:user", getUserCollections) 
