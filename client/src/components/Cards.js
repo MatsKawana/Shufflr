@@ -32,7 +32,7 @@ const Cards = () => {
 
         // Selected Collection Only
         if (collectionId) {
-            fetch(`${process.env.REACT_APP_BASE_URL}/cards/${collectionId}`)
+            fetch(`${process.env.REACT_APP_BASE_URL}/api/cards/${collectionId}`)
             .then(res => res.json())
             .then((data) => {
                 if (data.status === 400) {
@@ -47,7 +47,7 @@ const Cards = () => {
 
         // All Collections
         } else if (userId !== null) {
-            fetch(`${process.env.REACT_APP_BASE_URL}/collections/${userId}`)
+            fetch(`${process.env.REACT_APP_BASE_URL}/api/collections/${userId}`)
             .then(res => res.json())
             .then((data) => {
                 if (data.status === 400) {

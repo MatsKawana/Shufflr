@@ -12,7 +12,7 @@ const UserProvider = ({ children }) => {
     // GET | Check if Auth0 user exists in DB
     useEffect(() => {
         user &&
-        fetch(`${process.env.REACT_APP_BASE_URL}/users/${user.email}`)
+        fetch(`${process.env.REACT_APP_BASE_URL}/api/users/${user.email}`)
         .then(res => res.json())
         .then((data) => {
             if (data.status === 400) {
@@ -33,7 +33,7 @@ const UserProvider = ({ children }) => {
     // POST User to DB 
     const addUser = () => {
         if (user) {
-            fetch(`${process.env.REACT_APP_BASE_URL}/users`, {
+            fetch(`${process.env.REACT_APP_BASE_URL}/api/users`, {
                 method: "POST",
                 headers: {
                     Accept: "application/json",
