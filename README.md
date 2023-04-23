@@ -1,10 +1,24 @@
 # Shufflr
-A Simple Flashcard App aimed at making studying fun and effortless
+A Simple Flashcard App aimed at making studying fun and effortless.
+
+---
+## Live Demo
+**[Check out Shufflr here!](https://shufflr-five.vercel.app)**
+
+**Note**: Create an account or use the following login to access all the features:
+
+Username / Password:
+* test@shufflr.com
+* Shufflr123!
+
+---
 
 ## Description
 As a final project at Concordia Web Development Bootcamp, I chose to create a flashcard app to not only reinforce the material learned throughout the program, but to also create a practical app that helps me in my on-going learning and coding journey.
 
 Shufflr is an MVP made in a two weeks, using React, Node.js, Express, and MongoDB. Auth0 was used for user authentications.
+
+---
 
 ## Key Features
 1. Create Collections & Cards about any subject in a questions and answers format
