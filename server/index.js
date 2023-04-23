@@ -31,19 +31,19 @@ express()
 .use(cors(corsOptions))
 .use(helmet())
 
-.get("/users/:user", getUserInfo)
-.get("/collections/:user", getUserCollections) 
-.get("/cards/:collection", getCardsFromCollection)
-.get("/cards", getUserCards)
+.get("api/users/:user", getUserInfo)
+.get("api/collections/:user", getUserCollections) 
+.get("api/cards/:collection", getCardsFromCollection)
+.get("api/cards", getUserCards)
 
-.post("/users", addUser)
-.post("/addcollections/:user", addCollection)
+.post("api/users", addUser)
+.post("api/addcollections/:user", addCollection)
 
-.patch("/users/:user", updateUser)
-.patch("/collections/:collection", updateCollection)
-.patch("/review/:collectionId", updateReviewCard)
+.patch("api/users/:user", updateUser)
+.patch("api/collections/:collection", updateCollection)
+.patch("api/review/:collectionId", updateReviewCard)
 
-.delete("/collections/:collection", deleteCollection)
+.delete("api/collections/:collection", deleteCollection)
 
 .get("*", (req, res) => {
     res.status(404).json({
