@@ -2,6 +2,9 @@
 
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
+require("dotenv").config();
+const port = process.env.PORT || 4000;
 
 // Handlers
 const {
@@ -21,6 +24,7 @@ express()
 .use(morgan("tiny"))
 .use(express.json())
 .use(express.static("public"))
+.use(cors())
 
 .get("/users/:user", getUserInfo)
 .get("/collections/:user", getUserCollections) 
