@@ -38,7 +38,7 @@ const CardItem = ({collectionId, cardId, cardQuestion, cardAnswer, cardHint, car
     const handleReviewClick = (cardId) => {
 
         // Add card to review:
-        fetch(`/review/${collectionId}`, {
+        fetch(`${process.env.REACT_APP_BASE_URL}/review/${collectionId}`, {
             method: "PATCH",
             headers: {
                 Accept: "application/json",

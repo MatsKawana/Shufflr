@@ -38,7 +38,7 @@ const CollectionItem = ({collectionName, collectionDescription, collectionCatego
 
     // Handle Delete Collection Click
     const handleDeleteCollection = (ev) => {
-        fetch(`/collections/${collectionId}`, {
+        fetch(`${process.env.REACT_APP_BASE_URL}/collections/${collectionId}`, {
             method: "DELETE",
             headers: { Accept: "application/json", "Content-Type": "application/json"},
             body: JSON.stringify({userId: userId})

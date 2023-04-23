@@ -23,7 +23,7 @@ const Focus = () => {
 
     // Fetch Collections and Cards | Randomize Cards Order
     useEffect(() => {
-        fetch(`/cards/${collectionId}`)
+        fetch(`${process.env.REACT_APP_BASE_URL}/cards/${collectionId}`)
         .then(res => res.json())
         .then((data) => {
             if (data.status === 400) {
@@ -45,7 +45,7 @@ const Focus = () => {
         setIsDisabled(activePosition+1 === collectionCards.length);
 
         // Review card from review:
-        fetch(`/review/${collectionId}`, {
+        fetch(`${process.env.REACT_APP_BASE_URL}/review/${collectionId}`, {
             method: "PATCH",
             headers: {
                 Accept: "application/json",
@@ -69,7 +69,7 @@ const Focus = () => {
 
 
         // Add card to review:
-        fetch(`/review/${collectionId}`, {
+        fetch(`${process.env.REACT_APP_BASE_URL}/review/${collectionId}`, {
             method: "PATCH",
             headers: {
                 Accept: "application/json",

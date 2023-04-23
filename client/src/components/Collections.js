@@ -21,7 +21,7 @@ const Collections = () => {
     // Fetch All Collections
     useEffect(() => {
         setIsDeleted(false);
-        fetch(`/collections/${userId}`)
+        fetch(`${process.env.REACT_APP_BASE_URL}/collections/${userId}`)
         .then(res => res.json())
         .then((data) => {
             if (data.status === 400) {

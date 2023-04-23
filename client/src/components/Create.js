@@ -47,7 +47,7 @@ const Create = () => {
 
     // GET | Collections and Cards of User
     useEffect(() => {
-        fetch(`/collections/${userId}`)
+        fetch(`${process.env.REACT_APP_BASE_URL}/collections/${userId}`)
         .then(res => res.json())
         .then(data => {
             if (data.status === 400) { 
@@ -62,7 +62,7 @@ const Create = () => {
     const handleSubmit = (ev) => {
         ev.preventDefault();
 
-        fetch(`/addcollections/${userId}`, {
+        fetch(`${process.env.REACT_APP_BASE_URL}/addcollections/${userId}`, {
             method: "POST",
             headers: { Accept: "application/json", "Content-Type": "application/json"},
             body: JSON.stringify({data: formData})}
@@ -78,7 +78,7 @@ const Create = () => {
 
     // PATCH | Save Changes to Modified Collection
     const handleModifySubmit = () => {
-        fetch(`/collections/${selectedCollection}`, {
+        fetch(`${process.env.REACT_APP_BASE_URL}/collections/${selectedCollection}`, {
             method: "PATCH",
             headers: {Accept: "application/json", "Content-Type": "application/json"},
             body: JSON.stringify({data: formData, userId: userId})
